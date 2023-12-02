@@ -1,0 +1,115 @@
+/* medium */
+@font-face {
+    font-family: 'Euclid Circular A';
+    font-weight: 500;
+    font-style: normal;
+    src: url("../fonts/Euclid\ Circular\ A\ Medium.ttf");
+}
+
+/* regular */
+@font-face {
+    font-family: 'Euclid Circular A';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Euclid\ Circular\ A\ Regular.ttf");
+}
+
+/* semibold */
+@font-face {
+    font-family: 'Euclid Circular A';
+    font-weight: 600;
+    font-style: normal;
+    src: url("../fonts/Euclid\ Circular\ A\ SemiBold.ttf");
+}
+
+/* bold */
+@font-face {
+    font-family: 'Euclid Circular A';
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/Euclid\ Circular\ A\ Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Euclid Circular A", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.full {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0px auto;
+    /* outline: 2px solid blue; */
+}
+
+.center {
+    max-width: 1560px;
+    width: 100%;
+    margin: 0px auto;
+    outline: 2px solid red;
+}
+
+.header_bck {
+    background-color: #F4F6F8;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0px 13px 29px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.header_address {
+    display: flex;
+    gap: 71px;
+}
+
+.header_links {
+    display: flex;
+    gap: 30px;
+}
+
+.map_address, .mail_address {
+    color: #3B3C40;
+    position: relative;
+}
+
+.map_address::before,.mail_address::before{
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    left: -29px;
+} 
+
+.map_address::before {
+    background-image: url("../img/icon_location.svg");
+}
+
+.mail_address::before{
+    background-image: url("../img/icon_mail.svg");
+}
+
+.header_links_name>a{
+    color: #3B3C40;
+}
