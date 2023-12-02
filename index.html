@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,89 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header class="header full header_bck">
-        <nav class="navigation center">
-            <ul class="header_address">
-                <a class="map_address" href="">Магазины</a>
-                <a class="mail_address" href="mailto:info@kraskizdes.ru">info@kraskizdes.ru</a>
-            </ul>
-            <ul class="header_links">
-                <li class="header_links_name"><a href="#">Доставка</a></li>
-                <li class="header_links_name"><a href="#">Оплата</a></li>
-                <li class="header_links_name"><a href="#">Возврат</a></li>
-                <li class="header_links_name"><a href="#">Помощь</a></li>
-                <li class="header_links_name"><a href="#">О нас</a></li>
-                <li class="header_links_name"><a href="#">Для бизнеса</a></li>
-            </ul>
+    <header class="header full">
+        <nav class="header_bck">
+            <div class="navigation center">
+                <ul class="header_address">
+                    <a class="map_address" href="">Магазины</a>
+                    <a class="mail_address" href="mailto:info@kraskizdes.ru">info@kraskizdes.ru</a>
+                </ul>
+                <ul class="header_links">
+                    <li class="header_links_name"><a href="#">Доставка</a></li>
+                    <li class="header_links_name"><a href="#">Оплата</a></li>
+                    <li class="header_links_name"><a href="#">Возврат</a></li>
+                    <li class="header_links_name"><a href="#">Помощь</a></li>
+                    <li class="header_links_name"><a href="#">О нас</a></li>
+                    <li class="header_links_name"><a href="#">Для бизнеса</a></li>
+                </ul>
+            </div>
         </nav>
+        <section class="header_menu center">
+            <div class="main_logo_wrp">
+                <a href="#" class="main_logo">
+                    <img src="img/main_logo.png" alt="main_logo">
+                </a>
+            </div>
+            <div class="header_catalog_btn">
+                <a href="#" class="catalog_link">
+                    <div class="catalog_link_icon_wrp">
+                        <svg class="catalog_link_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="18"
+                            viewBox="0 0 20 18" fill="none">
+                            <path
+                                d="M1.42871 1.74603C1.42871 0.781725 2.21044 0 3.17474 0H16.8255C17.7898 0 18.5716 0.781725 18.5716 1.74603H1.42871Z"
+                                fill="#E50E78" />
+                            <path
+                                d="M0.476562 4.44525C0.476562 3.48094 1.25829 2.69922 2.22259 2.69922H17.7781C18.7425 2.69922 19.5242 3.48094 19.5242 4.44525H0.476562Z"
+                                fill="#E50E78" />
+                            <path
+                                d="M1 7.39746C1 6.84518 1.44771 6.39746 2 6.39746H18C18.5523 6.39746 19 6.84518 19 7.39746V15.6197C19 16.172 18.5523 16.6197 18 16.6197H2C1.44772 16.6197 1 16.172 1 15.6197V7.39746Z"
+                                stroke="#E50E78" stroke-width="2" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="header_search_wrp">
+                <input class="header_search" id="search-btn" type="search" placeholder="Искать товары">
+                <button class="search_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
+                        <path
+                            d="M6.39423 4.89554C6.09755 4.59862 5.6162 4.59862 5.31952 4.89554C4.21797 5.99709 3.67656 7.53161 3.8339 9.10591C3.87316 9.49809 4.20355 9.79044 4.58939 9.79044C4.61474 9.79044 4.6403 9.78915 4.66565 9.78662C5.08343 9.74483 5.38819 9.37213 5.3464 8.95463C5.23442 7.83585 5.61648 6.748 6.39423 5.97021C6.69115 5.67357 6.69115 5.19219 6.39423 4.89554Z"
+                            fill="white" />
+                        <path
+                            d="M9.40412 0.213867C4.61257 0.213867 0.714355 4.11208 0.714355 8.90363C0.714355 13.6952 4.61257 17.5934 9.40412 17.5934C14.1957 17.5934 18.0939 13.6952 18.0939 8.90363C18.0939 4.11208 14.1956 0.213867 9.40412 0.213867ZM9.40412 16.0733C5.45066 16.0733 2.23445 12.8571 2.23445 8.90363C2.23445 4.95017 5.45066 1.73396 9.40412 1.73396C13.3573 1.73396 16.5738 4.95017 16.5738 8.90363C16.5738 12.8571 13.3576 16.0733 9.40412 16.0733Z"
+                            fill="white" />
+                        <path
+                            d="M21.063 19.4878L15.5401 13.9649C15.2432 13.668 14.7623 13.668 14.4654 13.9649C14.1684 14.2616 14.1684 14.7429 14.4654 15.0396L19.9883 20.5625C20.0588 20.6332 20.1426 20.6893 20.2348 20.7275C20.327 20.7657 20.4259 20.7853 20.5257 20.7852C20.7203 20.7852 20.9146 20.711 21.063 20.5625C21.3599 20.2658 21.3599 19.7845 21.063 19.4878Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="user_btn_container">
+                <li class="user_btn">
+                    <button>
+                        <img src="img/user_icon.png" alt="user">
+                        <p class="">Войти</p>
+                    </button>
+                </li>
+                <li class="user_btn">
+                    <button class="user_btn_icon_heart">
+                        <img  src="img/heart_icon.png" alt="heart">
+                        <p class="">Избранное</p>
+                    </button>
+                </li>
+                <li class="user_btn">
+                    <button class="user_btn_icon_cart">
+                        <img src="img/cart_icon.png" alt="cart">
+                        <p class="">Корзина</p>
+                    </button>
+                </li>
+            </ul>
+        </section>
     </header>
 
     <script src="script.js"></script>
 </body>
+
 </html>
