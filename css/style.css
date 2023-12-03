@@ -67,6 +67,7 @@ li {
 
 .header_bck {
     background-color: #F4F6F8;
+    margin-bottom: 14px;
 }
 
 .navigation {
@@ -118,6 +119,7 @@ li {
 .header_menu {
     display: flex;
     align-items: center;
+    margin-bottom: 17px;
 }
 
 .main_logo_wrp {
@@ -235,7 +237,7 @@ li {
     position: relative;
 }
 
-.user_btn_icon_heart::after, .user_btn_icon_cart::after{
+.user_btn_icon_heart::after, .user_btn_icon_cart::after {
     color: white;
     font-size: 14px;
     font-weight: 500;
@@ -253,7 +255,7 @@ li {
     right: 22px;
 }
 
-.user_btn_icon_cart::after{
+.user_btn_icon_cart::after {
     content: "4";
     top: 1px;
     right: 10px;
@@ -269,4 +271,62 @@ li {
     font-weight: 500;
     line-height: 130%;
     color: #3B3C40;
+}
+
+.header_btn_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn_nav_container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn_nav_item {
+    padding: 0px 24px;
+    box-sizing: border-box;
+    background-color: #F4F6F8;
+}
+
+.btn_nav_item_link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn_nav_item>a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    color: #3B3C40;
+    min-height: 50px;
+}
+
+.header_tel {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 130%;
+    color: white;
+    position: relative;
+    border-radius: 15px;
+    background: #E50E78;
+    box-shadow: 10px 15px 50px 0px rgba(173, 178, 201, 0.20);
+    padding: 13px 24px;
+    max-width: 221px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    box-sizing:border-box;
+}
+
+.header_tel::before {
+    content: "";
+    /* position: absolute; */
+    background-image: url("../img/tel_icon.png");
+    width: 24px;
+    height: 24px;
 }
