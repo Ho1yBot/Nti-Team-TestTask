@@ -593,6 +593,10 @@ li {
     content: "";
 }
 
+.slogan {
+    margin-bottom: 152px;
+}
+
 .slogan_list {
     display: flex;
     justify-content: space-between;
@@ -629,7 +633,7 @@ li {
     z-index: -1;
 }
 
-.slogan_item_ellipse::before{
+.slogan_item_ellipse::before {
     content: "";
     background-image: url("../img/Blend\ Group\ 4.png");
     position: inherit;
@@ -660,4 +664,157 @@ li {
     font-size: 16px;
     font-weight: 500;
     line-height: 140%;
+}
+
+.category {
+    overflow: hidden;
+}
+
+.category_title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.category_title_txt {
+    color: #3B3C40;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.all_category {
+    max-width: 237px;
+    width: 100%;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 30px;
+    box-sizing:border-box;
+    border: none;
+    border-radius: 15px;
+    background: var(--button-gradient, linear-gradient(96deg, #DD3197 0%, #822FAF 101.4%));
+}
+
+.all_category_icon{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    box-sizing:border-box;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.swiper_container {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.swiper_container::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -1px;
+    width: 41px;
+    height: 50px;
+    transform: rotate(180deg);
+    background: linear-gradient(90deg, #FFF 36.76%, rgba(255, 255, 255, 0.00) 99.93%);
+}
+
+.swiper_wrapper {
+    display: flex;
+    transition: transform 0.2s ease;
+    gap: 10px;
+
+}
+
+.swiper_slide {
+    /* flex: 0 0 14%; */
+    /* Каждый слайд занимает 14% ширины контейнера */
+    /* margin-right: 10px; */
+    /* Добавляем отступ между слайдами */
+    /* box-sizing: border-box; */
+    max-height: 50px;
+}
+
+.swiper_link {
+    display: flex;
+    padding: 14px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 15px;
+    background: #F4F6F8;
+    color: #3B3C40;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: nowrap
+}
+
+.swiper_slide:nth-child(2) a {
+    background-color: #E50E78;
+    color: white;
+}
+
+.slider_container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 25%;
+    /* Каждый слайд занимает 25% ширины контейнера */
+    box-sizing: border-box;
+}
+
+.prev_button,
+.next_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev_button {
+    left: 10px;
+}
+
+.next_button {
+    right: 10px;
+}
+
+.prev_button, .next_button {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 3px 6px 14px rgba(115, 103, 151, 0.15);
+    background-image: url("../img/prevnext_icon.svg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+}
+
+.prev_button {
+    transform: rotate(180deg);
 }
