@@ -313,11 +313,12 @@
             </li>
         </ul>
     </section>
-    <section class="category center">
+    <main class="category center">
         <div class="category_title">
             <p class="category_title_txt">Популярные категории</p>
             <button class="all_category">Все категории
-                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                    viewBox="0 0 24 25" fill="none">
                     <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699" stroke="url(#paint0_linear_2090_1140)"
                         stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M3.5 12.5H20.33" stroke="url(#paint1_linear_2090_1140)" stroke-width="2"
@@ -338,7 +339,7 @@
             </button>
         </div>
 
-        <div class="swiper_container">
+        <section class="swiper_container">
             <div class="swiper_wrapper">
                 <div class="swiper_slide">
                     <a class="swiper_link" href="#">
@@ -372,39 +373,244 @@
                     <a class="swiper_link" href="#">Специального назначения</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="slider_container">
-            <ul class="slider">
-                <li class="slide">
+        <section id="category_anchor" class="slider_container">
+            <ul class="category_slider">
+                <li class="category_slide_item">
                     <img src="img/category_1.png" alt="Image 1">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для стен
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_2.png" alt="Image 2">
+                    <div class="category_slide_link_wrp">
+                        <a href="#category_anchor" class="category_slide_item_link">Краски для потолка
+                            <span class="category_count">500+ товаров</span>
+                        </a>
+
+                    </div>
+
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_3.png" alt="Image 3">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для кухни и ванной
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_4.png" alt="Image 4">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для пола
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_1.png" alt="Image 1">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для стен
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_2.png" alt="Image 2">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для потолка
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_3.png" alt="Image 3">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для кухни и ванной
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
-                <li class="slide">
+                <li class="category_slide_item">
                     <img src="img/category_4.png" alt="Image 4">
+                    <a href="#category_anchor" class="category_slide_item_link">Краски для пола
+                        <span class="category_count">500+ товаров</span>
+                    </a>
                 </li>
             </ul>
             <button class="prev_button"></button>
             <button class="next_button"></button>
+        </section>
+
+        <div class="category_title">
+            <p class="category_title_txt">Скидки</p>
+            <button class="all_category">Все скидки
+                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                    viewBox="0 0 24 25" fill="none">
+                    <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699" stroke="url(#paint0_linear_2090_1140)"
+                        stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.5 12.5H20.33" stroke="url(#paint1_linear_2090_1140)" stroke-width="2"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <defs>
+                        <linearGradient id="paint0_linear_2090_1140" x1="14.4302" y1="6.42993" x2="21.2006" y2="6.77831"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DD3197" />
+                            <stop offset="1" stop-color="#822FAF" />
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_2090_1140" x1="3.5" y1="12.5" x2="8.20568" y2="20.6502"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DD3197" />
+                            <stop offset="1" stop-color="#822FAF" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </button>
         </div>
-    </section>
+
+        <section class="slider_container">
+            <ul class="other_slider">
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+                <li class="category_slide_item">
+                    <article class="small_slide_2">
+                        <div class="slider_img_wrp">
+                            <img src="img/slide_2.png" alt="Regal">
+                        </div>
+                        <p class="small_slide_mian_txt">Benjamin Moore Regal Select 549 <wbr> Waterborne Interior Paint Eggshell
+                        </p>
+                        <p class="small_slide_value">0.95&nbsp;л &bull; 2&nbsp;л</p>
+                        <p class="small_slide_price">от 3600 ₽<span class="small_slide_old_price">4500 ₽</span></p>
+                        <button class="slider_cart_icon">
+
+                        </button>
+                    </article>
+                </li>
+            </ul>
+            <button class="other_prev_button"></button>
+            <button class="other_next_button"></button>
+        </section>
+
+        <section class="form_container center">
+            <div class="form_img_wrp">
+                <img class="form_img" src="img/form_img.png" alt="img_form">
+            </div>
+            <div class="form">
+                <p class="form_title">Нужна консультация?</p>
+                <p class="form_subtitle">Оставьте свои данные, и мы перезвоним вам в ближайшее время</p>
+                <form action="#" method="post" id="myForm">
+                    <div class="form_group">
+                        <label class="form_lable" for="name">Имя:</label>
+                        <div class="input_container">
+                            <input class="form_input" type="text" id="name" name="name" required>
+                            <span class="form_icon">&#128100;</span>
+                        </div>
+                    </div>
+
+                    <div class="form_group">
+                        <label class="form_lable" for="phone">Телефон:</label>
+                        <div class="input_container">
+                            <input class="form_input" type="tel" id="phone" name="phone" required>
+                            <span class="form_icon">&#128222;</span>
+                        </div>
+                    </div>
+
+                    <!-- ... (ваш код формы) ... -->
+                    <button type="button" onclick="validateForm()">Отправить</button>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+
 
 
 

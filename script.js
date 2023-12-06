@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTransform();
     }
-    
+
 
     function dragEnd() {
         isDragging = false;
@@ -96,23 +96,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.slider');
-    const prevButton = document.querySelector('.prev_button');
-    const nextButton = document.querySelector('.next_button');
+    const slider1 = document.querySelector('.category_slider'); // Replace with your first slider class
+    const slider2 = document.querySelector('.other_slider'); // Replace with your second slider class
+    const prevButton1 = document.querySelector('.prev_button'); // Replace with your first prev button class
+    const nextButton1 = document.querySelector('.next_button'); // Replace with your first next button class
+    const prevButton2 = document.querySelector('.other_prev_button'); // Replace with your second prev button class
+    const nextButton2 = document.querySelector('.other_next_button'); // Replace with your second next button class
 
-    let currentIndex = 0;
+    let currentIndex1 = 0;
+    let currentIndex2 = 0;
 
-    nextButton.addEventListener('click', function () {
-        currentIndex++;
-        updateSlider();
+    nextButton1.addEventListener('click', function () {
+        currentIndex1++;
+        updateSlider(slider1, currentIndex1);
     });
 
-    prevButton.addEventListener('click', function () {
-        currentIndex--;
-        updateSlider();
+    prevButton1.addEventListener('click', function () {
+        currentIndex1--;
+        updateSlider(slider1, currentIndex1);
     });
 
-    function updateSlider() {
+    nextButton2.addEventListener('click', function () {
+        currentIndex2++;
+        updateSlider(slider2, currentIndex2);
+    });
+
+    prevButton2.addEventListener('click', function () {
+        currentIndex2--;
+        updateSlider(slider2, currentIndex2);
+    });
+
+    function updateSlider(slider, currentIndex) {
         const totalSlides = slider.children.length;
         const slideWidth = 25; // каждый слайд занимает 25%
         const translateValue = -currentIndex * slideWidth;
@@ -120,8 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slider.style.transition = 'transform 0.5s ease-in-out';
         slider.style.transform = `translateX(${translateValue}%)`;
 
-        // После завершения анимации, проверяем, если мы находимся в конце или начале слайдера
-        // и корректируем индекс соответственно
         setTimeout(() => {
             if (currentIndex >= totalSlides - 4) {
                 currentIndex = 0;
@@ -132,9 +144,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 slider.style.transition = 'none';
                 slider.style.transform = `translateX(-${slideWidth * (totalSlides - 4)}%)`;
             }
-        }, 500); // время анимации
+        }, 500);
     }
 });
+
+function validateForm() {
+    var nameInput = document.getElementById('name');
+    var phoneInput = document.getElementById('phone');
+
+    // Проверка имени на наличие только букв
+    // Проверка имени на наличие только букв (латиница и кириллица)
+    var nameRegex = /^[a-zA-Zа-яА-Я]+$/;
+    if (!nameRegex.test(nameInput.value.replace(/\s/g, ''))) {
+        alert('Пожалуйста, введите корректное имя (только буквы).');
+        return;
+    }
+
+    // Форматирование номера телефона при вводе
+    var formattedPhone = phoneInput.value.replace(/[^\d]/g, '');
+
+    // Проверка, что номер телефона не содержит более 11 цифр
+    if (formattedPhone.length !== 11)  {
+        alert('Пожалуйста, введите корректный номер телефона (11 цифр).');
+        return;
+    }
+
+    if (formattedPhone.length > 0) {
+        formattedPhone = formattedPhone.substring(0, 3) +
+            formattedPhone.substring(3, 6) +
+            formattedPhone.substring(6, 8) +
+            formattedPhone.substring(8, 10);
+    }
+
+    phoneInput.value = formattedPhone;
+
+
+
+    // Если обе проверки прошли успешно, выводим сообщение об успешной отправке
+    alert('Форма успешно отправлена!');
+}
+
+
 
 
 
