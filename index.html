@@ -587,26 +587,65 @@
                 <p class="form_subtitle">Оставьте свои данные, и мы перезвоним вам в ближайшее время</p>
                 <form action="#" method="post" id="myForm">
                     <div class="form_group">
-                        <label class="form_lable" for="name">Имя:</label>
-                        <div class="input_container">
-                            <input class="form_input" type="text" id="name" name="name" required>
-                            <span class="form_icon">&#128100;</span>
+                        <div class="input_container form_input_name">
+                            <input class="form_input " type="text" id="name" name="name" required
+                                placeholder="Ваше имя">
+                            <div class="error_message" id="nameError">Пожалуйста, введите корректное имя (только буквы).
+                            </div>
+                        </div>
+                        <div class="input_container form_input_tel">
+                            <input class="form_input" type="tel" id="phone" name="phone" required
+                                placeholder="Номер телефона">
+                            <div class="error_message" id="phoneError">Пожалуйста, введите корректный номер телефона (11
+                                цифр).</div>
+                        </div>
+                        <div class="form_treaty_btn_wrp">
+                            <p class="form_treaty">Нажимая на кнопку «Отправить», Вы принимаете условия <a
+                                    href="#myForm">Соглашения</a></p>
+                            <button class="form_button" type="button" onclick="validateForm()">Отправить
+                                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                    viewBox="0 0 24 25" fill="none">
+                                    <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699"
+                                        stroke="url(#paint0_linear_2090_1140)" stroke-width="2" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.5 12.5H20.33" stroke="url(#paint1_linear_2090_1140)" stroke-width="2"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_2090_1140" x1="14.4302" y1="6.42993"
+                                            x2="21.2006" y2="6.77831" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#DD3197" />
+                                            <stop offset="1" stop-color="#822FAF" />
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_2090_1140" x1="3.5" y1="12.5" x2="8.20568"
+                                            y2="20.6502" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#DD3197" />
+                                            <stop offset="1" stop-color="#822FAF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Модальное окно -->
+                        <div id="myModal" class="modal">
+                            <div class="modal_content">
+                                <img class="modal_svg_bcg" src="img/modal_bcg.svg" alt="bcg for modal">
+                                <span class="close" onclick="closeModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                        fill="none">
+                                        <path d="M29.5247 29.5247L10.4771 10.4771M29.5247 10.4771L10.4771 29.5247"
+                                            stroke="#9293B0" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <div class="modal_txt_wrp">
+                                    <p class="modal_title">Заявка принята</p>
+                                    <p class="modal_subtitle">Благодарим вас за заявку! Мы приняли её, и наш менеджер
+                                        свяжется с вами в ближайшее время.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form_group">
-                        <label class="form_lable" for="phone">Телефон:</label>
-                        <div class="input_container">
-                            <input class="form_input" type="tel" id="phone" name="phone" required>
-                            <span class="form_icon">&#128222;</span>
-                        </div>
-                    </div>
-
-                    <!-- ... (ваш код формы) ... -->
-                    <button type="button" onclick="validateForm()">Отправить</button>
-
                 </form>
-
             </div>
         </section>
     </main>

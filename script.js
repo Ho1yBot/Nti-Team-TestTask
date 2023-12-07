@@ -149,23 +149,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function validateForm() {
-    var nameInput = document.getElementById('name');
-    var phoneInput = document.getElementById('phone');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
 
-    // Проверка имени на наличие только букв
+    // Сброс стилей ошибок перед каждой проверкой
+    nameInput.classList.remove('error');
+    nameError.style.display = 'none';
+    phoneInput.classList.remove('error');
+    phoneError.style.display = 'none';
+
     // Проверка имени на наличие только букв (латиница и кириллица)
-    var nameRegex = /^[a-zA-Zа-яА-Я]+$/;
+    const nameRegex = /^[a-zA-Zа-яА-Я]+$/;
     if (!nameRegex.test(nameInput.value.replace(/\s/g, ''))) {
-        alert('Пожалуйста, введите корректное имя (только буквы).');
+        nameInput.classList.add('error');
+        nameError.style.display = 'block';
         return;
     }
 
     // Форматирование номера телефона при вводе
-    var formattedPhone = phoneInput.value.replace(/[^\d]/g, '');
+    let formattedPhone = phoneInput.value.replace(/[^\d]/g, '');
 
-    // Проверка, что номер телефона не содержит более 11 цифр
-    if (formattedPhone.length !== 11)  {
-        alert('Пожалуйста, введите корректный номер телефона (11 цифр).');
+    // Проверка, что номер телефона содержит 11 цифр
+    if (formattedPhone.length !== 11) {
+        phoneInput.classList.add('error');
+        phoneError.style.display = 'block';
         return;
     }
 
@@ -173,18 +182,24 @@ function validateForm() {
         formattedPhone = formattedPhone.substring(0, 3) +
             formattedPhone.substring(3, 6) +
             formattedPhone.substring(6, 8) +
-            formattedPhone.substring(8, 10);
+            formattedPhone.substring(8, 11);
     }
 
     phoneInput.value = formattedPhone;
 
-
-
     // Если обе проверки прошли успешно, выводим сообщение об успешной отправке
-    alert('Форма успешно отправлена!');
+    openModal();
 }
 
+function openModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
 
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
 
 
 
