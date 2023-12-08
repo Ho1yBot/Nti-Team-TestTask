@@ -204,5 +204,122 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Обработчик нажатия на иконку корзины
+    var cartButton = document.querySelector('.user_btn_icon_cart');
+    var cart = document.getElementById('cart');
+
+    cartButton.addEventListener('click', function () {
+        // Показать или скрыть корзину
+        if (cart.style.display === 'none' || cart.style.display === '') {
+            cart.style.display = 'block';
+        } else {
+            cart.style.display = 'none';
+        }
+    });
+
+    // Обработчики изменения количества и удаления товаров оставьте без изменений
+    var quantityInputs = document.querySelectorAll('.product-quantity input');
+    var removeButtons = document.querySelectorAll('.product-removal button');
+
+    quantityInputs.forEach(function (input) {
+        input.addEventListener('change', function () {
+            updateQuantity(input);
+        });
+    });
+
+    removeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            removeItem(button);
+        });
+    });
+
+    // Остальной ваш JavaScript код оставьте без изменений
+
+    /* Set rates + misc */
+    var taxRate = 0.05;
+    var shippingRate = 15.00;
+    var fadeTime = 300;
+
+    /* Recalculate cart */
+    function recalculateCart() {
+        var subtotal = 0;
+
+        /* Sum up row totals */
+        var products = document.querySelectorAll('.product');
+
+        products.forEach(function (product) {
+            subtotal += parseFloat(product.querySelector('.product-line-price').textContent);
+        });
+
+        /* Calculate totals */
+        var tax = subtotal * taxRate;
+        var shipping = (subtotal > 0 ? shippingRate : 0);
+        var total = subtotal + tax + shipping;
+
+        /* Update totals display */
+        var totalsValues = document.querySelectorAll('.totals-value');
+
+        totalsValues.forEach(function (totalsValue) {
+            totalsValue.style.display = 'none';
+        });
+
+        var cartSubtotal = document.getElementById('cart-subtotal');
+        var cartTax = document.getElementById('cart-tax');
+        var cartShipping = document.getElementById('cart-shipping');
+        var cartTotal = document.getElementById('cart-total');
+        var checkoutButton = document.querySelector('.checkout');
+
+        setTimeout(function () {
+            cartSubtotal.textContent = subtotal.toFixed(2);
+            cartTax.textContent = tax.toFixed(2);
+            cartShipping.textContent = shipping.toFixed(2);
+            cartTotal.textContent = total.toFixed(2);
+
+            if (total == 0) {
+                checkoutButton.style.display = 'none';
+            } else {
+                checkoutButton.style.display = 'block';
+            }
+
+            totalsValues.forEach(function (totalsValue) {
+                totalsValue.style.display = 'block';
+            });
+        }, fadeTime);
+    }
+
+    /* Update quantity */
+    function updateQuantity(quantityInput) {
+        /* Calculate line price */
+        var productRow = quantityInput.closest('.product');
+        var price = parseFloat(productRow.querySelector('.product-price').textContent);
+        var quantity = quantityInput.value;
+        var linePrice = price * quantity;
+
+        /* Update line price display and recalc cart totals */
+        var productLinePrice = productRow.querySelector('.product-line-price');
+
+        productLinePrice.style.display = 'none';
+
+        setTimeout(function () {
+            productLinePrice.textContent = linePrice.toFixed(2);
+            recalculateCart();
+            productLinePrice.style.display = 'block';
+        }, fadeTime);
+    }
+
+    /* Remove item from cart */
+    function removeItem(removeButton) {
+        /* Remove row from DOM and recalc cart total */
+        var productRow = removeButton.closest('.product');
+        productRow.style.display = 'none';
+
+        setTimeout(function () {
+            productRow.remove();
+            recalculateCart();
+        }, fadeTime);
+    }
+});
+
 
 

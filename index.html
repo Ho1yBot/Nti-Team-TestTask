@@ -90,7 +90,94 @@
                     </button>
                 </li>
             </ul>
+
+            <!-- cart -->
+
+            <div class="shopping-cart center" id="cart">
+
+                <div class="column-labels">
+                    <label class="product-image">Image</label>
+                    <label class="product-details">Product</label>
+                    <label class="product-price">Price</label>
+                    <label class="product-quantity">Quantity</label>
+                    <label class="product-removal">Remove</label>
+                    <label class="product-line-price">Total</label>
+                </div>
+
+                <div class="product">
+                    <div class="product-image">
+                        <img src="img/cart_img.png">
+                    </div>
+                    <div class="product-details">
+                        <p class="product-description">Flugger Dekso 25 Краска полуматовая с очень высокой прочностью
+                            для внутренних работ</p>
+                    </div>
+                    <div class="product-price">3360</div>
+                    <div class="product-quantity">
+                        <input type="number" value="2" min="1">
+                    </div>
+                    <div class="product-removal">
+                        <button class="remove-product">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18"
+                                fill="none">
+                                <path
+                                    d="M15.4326 3.33054C14.1126 3.19665 12.7927 3.09623 11.4645 3.02092V3.01255L11.2841 1.92469C11.1612 1.15481 10.9808 0 9.06233 0H6.91431C5.00405 0 4.82368 1.1046 4.6925 1.91632L4.52033 2.98745C3.75787 3.03766 2.9954 3.08787 2.23294 3.16318L0.560433 3.33054C0.216094 3.36402 -0.0298628 3.67364 0.00293141 4.01674C0.0357256 4.35983 0.330873 4.61088 0.675213 4.57741L2.34772 4.41004C6.64376 3.9749 10.9726 4.14226 15.3178 4.58577C15.3424 4.58577 15.3588 4.58577 15.3834 4.58577C15.695 4.58577 15.9655 4.3431 15.9983 4.01674C16.0229 3.67364 15.7769 3.36402 15.4326 3.33054Z"
+                                    fill="#9293B0" />
+                                <path
+                                    d="M13.9241 5.76581C13.7273 5.55661 13.4568 5.43945 13.178 5.43945H2.81505C2.53629 5.43945 2.25754 5.55661 2.06898 5.76581C1.88041 5.97502 1.77383 6.25954 1.79023 6.55242L2.29854 15.1382C2.38872 16.4102 2.5035 18.0001 5.36479 18.0001H10.6283C13.4896 18.0001 13.6043 16.4185 13.6945 15.1382L14.2028 6.56079C14.2192 6.25954 14.1126 5.97502 13.9241 5.76581ZM9.35749 13.8077H6.62737C6.29123 13.8077 6.01248 13.5231 6.01248 13.18C6.01248 12.8369 6.29123 12.5524 6.62737 12.5524H9.35749C9.69363 12.5524 9.97238 12.8369 9.97238 13.18C9.97238 13.5231 9.69363 13.8077 9.35749 13.8077ZM10.0462 10.4604H5.94689C5.61075 10.4604 5.332 10.1759 5.332 9.83276C5.332 9.48966 5.61075 9.20514 5.94689 9.20514H10.0462C10.3823 9.20514 10.6611 9.48966 10.6611 9.83276C10.6611 10.1759 10.3823 10.4604 10.0462 10.4604Z"
+                                    fill="#9293B0" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-line-price">3360</div>
+                </div>
+
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+                        <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at
+                            3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's
+                            turn!</p>
+                    </div>
+                    <div class="product-price">45.99</div>
+                    <div class="product-quantity">
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="product-removal">
+                        <button class="remove-product">
+                            Remove
+                        </button>
+                    </div>
+                    <div class="product-line-price">45.99</div>
+                </div>
+
+                <div class="totals">
+                    <div class="totals-item">
+                        <label>Subtotal</label>
+                        <div class="totals-value" id="cart-subtotal">71.97</div>
+                    </div>
+                    <div class="totals-item">
+                        <label>Tax (5%)</label>
+                        <div class="totals-value" id="cart-tax">3.60</div>
+                    </div>
+                    <div class="totals-item">
+                        <label>Shipping</label>
+                        <div class="totals-value" id="cart-shipping">15.00</div>
+                    </div>
+                    <div class="totals-item totals-item-total">
+                        <label>Grand Total</label>
+                        <div class="totals-value" id="cart-total">90.57</div>
+                    </div>
+                </div>
+
+                <button class="checkout">Checkout</button>
+
+            </div>
         </section>
+
         <section class="header_btn_nav center">
             <nav>
                 <ul class="btn_nav_container">
@@ -796,12 +883,6 @@
         </div>
 
     </footer>
-
-
-
-
-
-
 
     <script src="script.js"></script>
 
