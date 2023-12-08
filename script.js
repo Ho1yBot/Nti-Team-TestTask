@@ -1,3 +1,6 @@
+let footerGrade = "5/5";
+document.querySelector(".footer_grade").innerHTML = footerGrade;
+
 
 const swiper = new Swiper('.swiper', {
     // Optional parameters
