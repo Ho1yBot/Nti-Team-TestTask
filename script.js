@@ -234,8 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Остальной ваш JavaScript код оставьте без изменений
-
     /* Set rates + misc */
     var taxRate = 0.05;
     var shippingRate = 15.00;
@@ -291,13 +289,13 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Update quantity */
     function updateQuantity(quantityInput) {
         /* Calculate line price */
-        var productRow = quantityInput.closest('.product');
-        var price = parseFloat(productRow.querySelector('.product-price').textContent);
-        var quantity = quantityInput.value;
-        var linePrice = price * quantity;
+        const productRow = quantityInput.closest('.product');
+        const price = parseFloat(productRow.querySelector('.product-price').textContent);
+        const quantity = quantityInput.value;
+        const linePrice = price * quantity;
 
         /* Update line price display and recalc cart totals */
-        var productLinePrice = productRow.querySelector('.product-line-price');
+        const productLinePrice = productRow.querySelector('.product-line-price');
 
         productLinePrice.style.display = 'none';
 
@@ -311,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Remove item from cart */
     function removeItem(removeButton) {
         /* Remove row from DOM and recalc cart total */
-        var productRow = removeButton.closest('.product');
+        const productRow = removeButton.closest('.product');
         productRow.style.display = 'none';
 
         setTimeout(function () {
@@ -320,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, fadeTime);
     }
 });
+
 
 
 
