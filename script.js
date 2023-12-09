@@ -20,7 +20,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerGroup: 1,
 
     // Отключение сенсерности
-    allowTouchMove: false
+    // allowTouchMove: false
 });
 
 
@@ -205,6 +205,8 @@ function closeModal() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
     // Обработчик нажатия на иконку корзины
     var cartButton = document.querySelector('.user_btn_icon_cart');
     var cart = document.getElementById('cart');
@@ -253,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
         /* Calculate totals */
         var tax = subtotal * taxRate;
         var shipping = (subtotal > 0 ? shippingRate : 0);
-        var total = subtotal + tax + shipping;
+        var total = subtotal;
 
         /* Update totals display */
         var totalsValues = document.querySelectorAll('.totals-value');
@@ -274,11 +276,11 @@ document.addEventListener('DOMContentLoaded', function () {
             cartShipping.textContent = shipping.toFixed(2);
             cartTotal.textContent = total.toFixed(2);
 
-            if (total == 0) {
-                checkoutButton.style.display = 'none';
-            } else {
-                checkoutButton.style.display = 'block';
-            }
+            // if (total == 0) {
+            //     checkoutButton.style.display = 'none';
+            // } else {
+            //     checkoutButton.style.display = 'block';
+            // }
 
             totalsValues.forEach(function (totalsValue) {
                 totalsValue.style.display = 'block';
@@ -317,8 +319,25 @@ document.addEventListener('DOMContentLoaded', function () {
             recalculateCart();
         }, fadeTime);
     }
+
+
+
 });
 
+function closeCart() {
+    const cart = document.getElementById('cart');
+    cart.style.display = 'none';
+}
 
 
+const inputElement = document.getElementById('search-btn');
+
+function updatePlaceholderText() {
+    const newPlaceholderText = window.matchMedia('(max-width: 375px)').matches ? 'Поиск' : 'Искать товары';
+    inputElement.placeholder = newPlaceholderText;
+}
+
+updatePlaceholderText();
+
+window.addEventListener('resize', updatePlaceholderText);
 
