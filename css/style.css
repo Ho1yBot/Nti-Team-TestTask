@@ -737,10 +737,21 @@ li {
 }
 
 .swiper_container {
-    overflow: hidden;
-    position: relative;
+    overflow: auto;
     margin-bottom: 30px;
+    overflow-y: hidden;
 }
+
+.swiper_container::-webkit-scrollbar {
+    height: 15px;
+}
+
+.swiper_container::-webkit-scrollbar-thumb {
+    background-color: #F4F6F8;
+    margin-top: 2px;
+    /* border: 2px solid #F4F6F8; */
+}
+
 
 .swiper_container::after {
     content: "";
@@ -757,7 +768,7 @@ li {
     display: flex;
     transition: transform 0.2s ease;
     gap: 10px;
-
+    margin-bottom: 10px;
 }
 
 .swiper_slide {
@@ -860,6 +871,11 @@ li {
 
 .slider_container {
     position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .prev_button,
@@ -1943,7 +1959,7 @@ label {
         width: 278px;
         height: 277px;
         top: -77px;
-        
+
         right: -26px;
     }
 
@@ -1955,7 +1971,7 @@ label {
         right: -34px
     }
 
-    .slogan_item_ellipse_txt{
+    .slogan_item_ellipse_txt {
         gap: 8px;
         max-width: 277px;
         margin-left: 28px;
@@ -1972,5 +1988,21 @@ label {
         font-style: normal;
         font-weight: 500;
         line-height: 140%;
+    }
+
+    .category_title_txt {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%;
+    }
+
+    .swiper_container::after {
+        background: none;
+    }
+
+    .category_slide_item {
+        max-width: 173px;
+        max-height: 260px;
     }
 }

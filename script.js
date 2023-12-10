@@ -23,113 +23,155 @@ const swiper = new Swiper('.swiper', {
     // allowTouchMove: false
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.swiper_container');
-    const wrapper = document.querySelector('.swiper_wrapper');
-    const slides = document.querySelectorAll('.swiper_slide');
+    const slider = document.querySelector('.other_slider');
+    const prevButton = document.querySelector('.other_prev_button');
+    const nextButton = document.querySelector('.other_next_button');
 
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
+    if (!slider || !prevButton || !nextButton) {
+        console.error("Slider or buttons not found");
+        return;
+    }
+
     let currentIndex = 0;
+    const slidesToShow = window.innerWidth >= 375 ? 4 : 2;
 
-    slides.forEach((slide, index) => {
-        slide.addEventListener('mousedown', (e) => selectSlide(index));
+    nextButton.addEventListener('click', function () {
+        if (currentIndex < slider.children.length - slidesToShow) {
+            currentIndex++;
+            updateSlider();
+        }
     });
 
-    container.addEventListener('mousedown', dragStart);
-
-    container.addEventListener('mouseup', dragEnd);
-
-    container.addEventListener('mousemove', dragMove);
-
-    function dragStart(e) {
-        startPos = e.clientX;
-        isDragging = true;
-        container.style.cursor = 'grabbing';
-    }
-
-    function dragMove(e) {
-        if (!isDragging) return;
-
-        const currentPosition = e.clientX;
-        const diff = currentPosition - startPos;
-        currentTranslate = prevTranslate + diff;
-
-        setTransform();
-    }
-
-
-    function dragEnd() {
-        isDragging = false;
-        container.style.cursor = 'grab';
-        prevTranslate = currentTranslate;
-        checkIndex();
-    }
-
-    function setTransform() {
-        wrapper.style.transform = `translateX(${currentTranslate}px)`;
-    }
-
-    function selectSlide(index) {
-        currentIndex = index;
-        updateIndex();
-    }
-
-    function updateIndex() {
-        currentTranslate = -currentIndex * (slides[0].offsetWidth + 10);
-        setTransform();
-    }
-
-    function checkIndex() {
-        const lastIndex = slides.length - 1;
-
-        if (currentIndex < 0) {
-            currentIndex = lastIndex;
-        } else if (currentIndex > lastIndex) {
-            currentIndex = 0;
+    prevButton.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
         }
+    });
 
-        updateIndex();
+    function updateSlider() {
+        const totalSlides = slider.children.length;
+        const slideWidth = 100 / slidesToShow;
+        const translateValue = -currentIndex * slideWidth;
+
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        slider.style.transform = `translateX(${translateValue}%)`;
+
+        setTimeout(() => {
+            if (currentIndex >= totalSlides - slidesToShow) {
+                currentIndex = 0;
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(0)`;
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - slidesToShow;
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(-${slideWidth * (totalSlides - slidesToShow)}%)`;
+            }
+        }, 500);
     }
+
+    // Обновление слайдера при изменении размера окна
+    window.addEventListener('resize', function () {
+        slidesToShow = window.innerWidth >= 375 ? 4 : 2;
+        updateSlider();
+    });
 });
 
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     const container = document.querySelector('.swiper_container');
+//     const wrapper = document.querySelector('.swiper_wrapper');
+//     const slides = document.querySelectorAll('.swiper_slide');
+
+//     let isDragging = false;
+//     let startPos = 0;
+//     let currentTranslate = 0;
+//     let prevTranslate = 0;
+//     let currentIndex = 0;
+
+//     slides.forEach((slide, index) => {
+//         slide.addEventListener('mousedown', (e) => selectSlide(index));
+//     });
+
+//     container.addEventListener('mousedown', dragStart);
+
+//     container.addEventListener('mouseup', dragEnd);
+
+//     container.addEventListener('mousemove', dragMove);
+
+//     function dragStart(e) {
+//         startPos = e.clientX;
+//         isDragging = true;
+//         container.style.cursor = 'grabbing';
+//     }
+
+//     function dragMove(e) {
+//         if (!isDragging) return;
+
+//         const currentPosition = e.clientX;
+//         const diff = currentPosition - startPos;
+//         currentTranslate = prevTranslate + diff;
+
+//         setTransform();
+//     }
+
+
+//     function dragEnd() {
+//         isDragging = false;
+//         container.style.cursor = 'grab';
+//         prevTranslate = currentTranslate;
+//         checkIndex();
+//     }
+
+//     function setTransform() {
+//         wrapper.style.transform = `translateX(${currentTranslate}px)`;
+//     }
+
+//     function selectSlide(index) {
+//         currentIndex = index;
+//         updateIndex();
+//     }
+
+//     function updateIndex() {
+//         currentTranslate = -currentIndex * (slides[0].offsetWidth + 10);
+//         setTransform();
+//     }
+
+//     function checkIndex() {
+//         const lastIndex = slides.length - 1;
+
+//         if (currentIndex < 0) {
+//             currentIndex = lastIndex;
+//         } else if (currentIndex > lastIndex) {
+//             currentIndex = 0;
+//         }
+
+//         updateIndex();
+//     }
+// });
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const slider1 = document.querySelector('.category_slider'); // Replace with your first slider class
-    const slider2 = document.querySelector('.other_slider'); // Replace with your second slider class
-    const prevButton1 = document.querySelector('.prev_button'); // Replace with your first prev button class
-    const nextButton1 = document.querySelector('.next_button'); // Replace with your first next button class
-    const prevButton2 = document.querySelector('.other_prev_button'); // Replace with your second prev button class
-    const nextButton2 = document.querySelector('.other_next_button'); // Replace with your second next button class
+    const slider = document.querySelector('.slider');
+    const prevButton = document.querySelector('.prev_button');
+    const nextButton = document.querySelector('.next_button');
 
-    let currentIndex1 = 0;
-    let currentIndex2 = 0;
+    let currentIndex = 0;
 
-    nextButton1.addEventListener('click', function () {
-        currentIndex1++;
-        updateSlider(slider1, currentIndex1);
+    nextButton.addEventListener('click', function () {
+        currentIndex++;
+        updateSlider();
     });
 
-    prevButton1.addEventListener('click', function () {
-        currentIndex1--;
-        updateSlider(slider1, currentIndex1);
+    prevButton.addEventListener('click', function () {
+        currentIndex--;
+        updateSlider();
     });
 
-    nextButton2.addEventListener('click', function () {
-        currentIndex2++;
-        updateSlider(slider2, currentIndex2);
-    });
-
-    prevButton2.addEventListener('click', function () {
-        currentIndex2--;
-        updateSlider(slider2, currentIndex2);
-    });
-
-    function updateSlider(slider, currentIndex) {
+    function updateSlider() {
         const totalSlides = slider.children.length;
         const slideWidth = 25; // каждый слайд занимает 25%
         const translateValue = -currentIndex * slideWidth;
@@ -137,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
         slider.style.transition = 'transform 0.5s ease-in-out';
         slider.style.transform = `translateX(${translateValue}%)`;
 
+        // После завершения анимации, проверяем, если мы находимся в конце или начале слайдера
+        // и корректируем индекс соответственно
         setTimeout(() => {
             if (currentIndex >= totalSlides - 4) {
                 currentIndex = 0;
@@ -147,9 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 slider.style.transition = 'none';
                 slider.style.transform = `translateX(-${slideWidth * (totalSlides - 4)}%)`;
             }
-        }, 500);
+        }, 500); // время анимации
     }
 });
+
+
 
 function validateForm() {
     const nameInput = document.getElementById('name');
