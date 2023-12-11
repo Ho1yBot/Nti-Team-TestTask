@@ -78,8 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 // document.addEventListener('DOMContentLoaded', function () {
 //     const container = document.querySelector('.swiper_container');
 //     const wrapper = document.querySelector('.swiper_wrapper');
@@ -151,8 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //         updateIndex();
 //     }
 // });
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
