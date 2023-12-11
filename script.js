@@ -383,3 +383,33 @@ updatePlaceholderText();
 
 window.addEventListener('resize', updatePlaceholderText);
 
+
+// Бургер меню
+document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.menu_burger_hidden');
+    menuButton.addEventListener('click', toggleMenu);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.menu_burger_hidden');
+    menuButton.addEventListener('click', toggleMenu);
+});
+
+function toggleMenu() {
+    var menu = document.querySelector('.menu');
+    var overlay = document.querySelector('.overlay');
+
+    menu.style.left = menu.style.left === '0px' ? '0px' : '0';
+    overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+}
+
+function closeMenu() {
+    var menu = document.querySelector('.menu');
+    var overlay = document.querySelector('.overlay');
+
+    menu.style.left = '-295px';
+    overlay.style.display = 'none';
+}
+
+
+

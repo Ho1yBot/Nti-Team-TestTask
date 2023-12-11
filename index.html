@@ -34,13 +34,41 @@
             </div>
         </nav>
         <section class="header_menu center">
-            <div class="menu_burger_hidden"><a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
-                        <path
-                            d="M1.5 3.5L18.5 3.5C18.8978 3.5 19.2794 3.34197 19.5607 3.06066C19.842 2.77936 20 2.39783 20 2C20 1.60218 19.842 1.22065 19.5607 0.939343C19.2794 0.658038 18.8978 0.500003 18.5 0.500003L1.5 0.5C1.10218 0.5 0.720644 0.658035 0.43934 0.93934C0.158035 1.22064 -1.9271e-07 1.60218 -2.62268e-07 2C-3.31826e-07 2.39782 0.158035 2.77936 0.439339 3.06066C0.720644 3.34197 1.10217 3.5 1.5 3.5ZM18.5 6.5L1.5 6.5C1.10217 6.5 0.720643 6.65804 0.439339 6.93934C0.158034 7.22064 -1.24178e-06 7.60218 -1.31134e-06 8C-1.3809e-06 8.39782 0.158034 8.77936 0.439338 9.06066C0.720643 9.34196 1.10217 9.5 1.5 9.5L18.5 9.5C18.8978 9.5 19.2794 9.34197 19.5607 9.06066C19.842 8.77936 20 8.39783 20 8C20 7.60218 19.842 7.22065 19.5607 6.93934C19.2794 6.65804 18.8978 6.5 18.5 6.5ZM18.5 12.5L1.5 12.5C1.10217 12.5 0.720642 12.658 0.439338 12.9393C0.158033 13.2206 -2.29086e-06 13.6022 -2.36041e-06 14C-2.42997e-06 14.3978 0.158033 14.7794 0.439337 15.0607C0.720642 15.342 1.10217 15.5 1.5 15.5L18.5 15.5C18.8978 15.5 19.2794 15.342 19.5607 15.0607C19.842 14.7794 20 14.3978 20 14C20 13.6022 19.842 13.2206 19.5607 12.9393C19.2794 12.658 18.8978 12.5 18.5 12.5Z"
-                            fill="white" />
-                    </svg>
-                </a></div>
+            <button class="menu_burger_hidden" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                    <path
+                        d="M1.5 3.5L18.5 3.5C18.8978 3.5 19.2794 3.34197 19.5607 3.06066C19.842 2.77936 20 2.39783 20 2C20 1.60218 19.842 1.22065 19.5607 0.939343C19.2794 0.658038 18.8978 0.500003 18.5 0.500003L1.5 0.5C1.10218 0.5 0.720644 0.658035 0.43934 0.93934C0.158035 1.22064 -1.9271e-07 1.60218 -2.62268e-07 2C-3.31826e-07 2.39782 0.158035 2.77936 0.439339 3.06066C0.720644 3.34197 1.10217 3.5 1.5 3.5ZM18.5 6.5L1.5 6.5C1.10217 6.5 0.720643 6.65804 0.439339 6.93934C0.158034 7.22064 -1.24178e-06 7.60218 -1.31134e-06 8C-1.3809e-06 8.39782 0.158034 8.77936 0.439338 9.06066C0.720643 9.34196 1.10217 9.5 1.5 9.5L18.5 9.5C18.8978 9.5 19.2794 9.34197 19.5607 9.06066C19.842 8.77936 20 8.39783 20 8C20 7.60218 19.842 7.22065 19.5607 6.93934C19.2794 6.65804 18.8978 6.5 18.5 6.5ZM18.5 12.5L1.5 12.5C1.10217 12.5 0.720642 12.658 0.439338 12.9393C0.158033 13.2206 -2.29086e-06 13.6022 -2.36041e-06 14C-2.42997e-06 14.3978 0.158033 14.7794 0.439337 15.0607C0.720642 15.342 1.10217 15.5 1.5 15.5L18.5 15.5C18.8978 15.5 19.2794 15.342 19.5607 15.0607C19.842 14.7794 20 14.3978 20 14C20 13.6022 19.842 13.2206 19.5607 12.9393C19.2794 12.658 18.8978 12.5 18.5 12.5Z"
+                        fill="white" />
+                </svg>
+            </button>
+
+            <div class="overlay" onclick="closeMenu()"></div>
+
+            <div class="menu">
+                <button class="close-btn" onclick="closeMenu()">×</button>
+                <ul class="menu_account_link">
+                    <li><a href="#"><img src="img/catalog_link_icon.svg" alt=""> Каталог</a></li>
+                    <li><a href="#"><img src="img/cart_icon_mini_pink.svg" alt=""> Корзина</a></li>
+                    <li><a href="#"><img src="img/heart_icon_mini.svg" alt=""> Избранное</a></li>
+                    <li><a href="#"><img src="img/man_icon.svg" alt=""> Профиль</a></li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="menu_btn_list">
+                    <li><button class="contact-btn" ><img src="img/mail_icon_mini.svg" alt="">  info@kraskizdes.ru</button></li>
+                    <li><button class="contact-btn"><img src="img/tel_icon_mini.svg" alt=""> 8 (495) 120-81-55</button></li>
+                    
+                </ul>
+
+                <div class="divider"></div>
+                <ul class="menu_nav">
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Помощь</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Для бизнеса</a></li>
+                </ul>
+            </div>
             <div class="main_logo_wrp">
                 <a href="#" class="main_logo">
                     <img src="img/main_logo.png" alt="main_logo">
@@ -477,12 +505,12 @@
     </section>
     <main class="category center">
 
-        
+
 
         <section class="category center">
             <div class="category_title">
                 <p class="category_title_txt">Популярные категории</p>
-                <button class="all_category">Все категории
+                <button class="all_category all_category_hidden">Все категории
                     <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                         viewBox="0 0 24 25" fill="none">
                         <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699"
@@ -608,10 +636,10 @@
             </div>
         </section>
 
-        <div class="category_title">
-            <p class="category_title_txt">Скидки</p>
-            <button class="all_category">Все скидки
-                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+        <div class="sale_title">
+            <p class="sale_title_txt">Скидки</p>
+            <button class="all_sales">Все скидки
+                <svg class="all_sales_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                     viewBox="0 0 24 25" fill="none">
                     <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699" stroke="url(#paint0_linear_2090_1140)"
                         stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -778,7 +806,7 @@
                             <p class="form_treaty">Нажимая на кнопку «Отправить», Вы принимаете условия <a
                                     href="#myForm">Соглашения</a></p>
                             <button class="form_button" type="button" onclick="validateForm()">Отправить
-                                <svg class="all_category_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                <svg class="form_button_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                                     viewBox="0 0 24 25" fill="none">
                                     <path d="M14.4302 6.42993L20.5002 12.4999L14.4302 18.5699"
                                         stroke="url(#paint0_linear_2090_1140)" stroke-width="2" stroke-miterlimit="10"
